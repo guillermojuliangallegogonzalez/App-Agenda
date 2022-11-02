@@ -151,18 +151,12 @@ public class PersonaDetalleViewController implements Initializable {
 
         persona.setJubilado(checkBoxJubilado.isSelected());
 
-        if (persona.getEstadoCivil() != null) {
-            switch (persona.getEstadoCivil()) {
-                case CASADO:
-                    radioButtonCasado.setSelected(true);
-                    break;
-                case SOLTERO:
-                    radioButtonSoltero.setSelected(true);
-                    break;
-                case VIUDO:
-                    radioButtonViudo.setSelected(true);
-                    break;
-            }
+        if(radioButtonCasado.isSelected()){
+            persona.setEstadoCivil(CASADO);
+        }else if(radioButtonSoltero.isSelected()){
+            persona.setEstadoCivil(SOLTERO);
+        }else if(radioButtonViudo.isSelected()){
+            persona.setEstadoCivil(VIUDO);
         }
 
         if (datePickerFechaNacimiento.getValue() != null) {
